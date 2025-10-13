@@ -24,14 +24,14 @@ This README also describes how to extend the flake for other Universities.
 
 Execute the script from GitHub directly:
 ```sh
-nix run 'github:mayniklas/eduroam-flake'#strasbourg
+nix run github:e-v-o-l-v-e/eduroam-strasbourg-flake
 ```
 
 Execute the script from a local clone:
 ```sh
-git clone https://github.com/MayNiklas/eduroam-flake.git
-cd eduroam-flake
-nix run .#strasbourg
+git clone https://github.com/e-v-o-l-v-e/eduroam-strasbourg-flake.git
+cd eduroam-strasbourg-flake
+nix run .
 ```
 
 Warning: Nix flakes are pure. In other words: everything that is fetched needs to be hashed and locked in the `flake.lock` file.
@@ -39,8 +39,8 @@ This `flake.nix` will fail to build if the hashes are not correct (e.g. if the E
 
 ```sh
 # Execute the flake without updating the lock file
-nix run 'github:mayniklas/eduroam-flake'#strasbourg --recreate-lock-file --no-write-lock-file
+nix run github:e-v-o-l-v-e/eduroam-strasbourg-flake --recreate-lock-file --no-write-lock-file
 
 # Update the flake.lock file
-nix flake lock --update-input eduroam-university-bonn
+nix flake update
 ```
